@@ -79,7 +79,7 @@ if st.button('Intercorrelation Heatmap'):
     df_selected_team.to_csv('output.csv',index=False)
     df = pd.read_csv('output.csv')
 
-    corr = df_selected_team.corr()
+    corr = df.corr()
     mask = np.zeros_like(corr)
     mask[np.triu_indices_from(mask)] = True
     with sns.axes_style('white'):
